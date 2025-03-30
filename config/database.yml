@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: postgres
+  password: 12345678
+  host: localhost
+ 
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+
+development:
+  <<: *default
+  database: March_user_campagins
+  password: 12345678
+
+# production:
+#   <<: *default
+#   database: <%= ENV['DATABASE_URL'] %>  # Heroku will automatically set this
+#   url: <%= ENV['DATABASE_URL'] %>       # This tells Rails to use the DATABASE_URL from Heroku
+#   pool: 5                               # Adjust pool size as necessary
+#   timeout: 5000
